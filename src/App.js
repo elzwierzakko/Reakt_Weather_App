@@ -5,12 +5,28 @@ const api = {
 }
 
 function App() {
+
+  const DateBuilder = (d) => {
+    let months = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"]
+    let days = ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"];
+
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear()
+
+    return `${day} ${date} ${month} ${year}`
+  }
   return (
     <div className="app">
     <main>
       <div className="search-box">
       <input type="text" className="search-bar" placeholder="Search..."/>
       </div>
+     <div className="location-box">
+       <div className="location">Warszawa, PL</div>
+  <div className="date">{DateBuilder(new Date())}</div>
+     </div>
       </main>
     </div>
   );
