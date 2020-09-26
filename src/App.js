@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 const api = {
   key: "a6a955cc0efd6e6ef67a699dad70fe38",
   base: "https://api.openweathermap.org/data/2.5/",
